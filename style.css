@@ -24,13 +24,16 @@ h2 {
     margin-top: 0;
     font-size: 24px;
     text-align: center;
+    text-decoration: underline;
 }
 #itemInput {
-    width: calc(100% - 40px);
+    width: auto;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    font-size: 1rem;
+    letter-spacing: 1px;
 }
 span {
     display: inline-block;
@@ -77,10 +80,6 @@ div.checked {
     text-decoration: line-through;
     font-style: italic;
     color: green;
-}
-
-input {
-    transform: scale(1);
 }
 
 /* align the checkbox a bit better with the text */
