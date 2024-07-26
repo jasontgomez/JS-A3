@@ -98,16 +98,9 @@ function resetCheck(){
     while(nodeCounter < (nodeCheck.length-1)) {
         // if checked
         if (nodeCheck[nodeCounter].firstChild.classList.contains("checked")){
-            // add as fragment
-            tempListItem.appendChild(nodeCheck[nodeCounter].firstChild);
 
-            // remove element
-            nodeCheck[nodeCounter].remove();
-
-            // add to list
-            let li = document.createElement("li");
-            li.appendChild(tempListItem);
-            document.getElementById("listItems").appendChild(li);
+            // added to bottom
+            document.getElementById("listItems").appendChild(nodeCheck[nodeCounter]);
         }
         nodeCounter = nodeCounter + 1;
     }
