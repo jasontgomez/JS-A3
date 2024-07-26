@@ -1,14 +1,60 @@
 body {
-    margin: auto;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
-
 .container {
-    margin: auto;
-    margin-top: 100px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
 }
-
+h2 {
+    margin-top: 0;
+    font-size: 24px;
+    text-align: center;
+}
+#itemInput {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #5cb85c;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 5px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    padding: 10px;
+    background-color: #f9f9f9;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+li:nth-child(odd) {
+    background-color: #eee;
+}
 div.checked {
     text-decoration: line-through;
 }
