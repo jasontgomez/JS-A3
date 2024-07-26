@@ -1,14 +1,92 @@
-body {
-    margin: auto;
-    display: flex;
-    flex-direction: column;
+html {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
 }
 
-.container {
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    justify-content: center;
+    align-items: center;
+    height: 0; 
     margin: auto;
-    margin-top: 100px;
+}
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: auto;
+    margin-top: 80px;
+}
+h2 {
+    margin-top: 0;
+    font-size: 24px;
+    text-align: center;
+    text-decoration: underline;
+}
+#itemInput {
+    width: auto;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #5cb85c;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 30px;
+    margin-left: 5px;
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.3);
+    transition: 0.15s;
+}
+
+span:hover {
+    background-color: #4a994a;
+}
+
+span:active {
+    transform: translate(0,2px);
+    box-shadow: none;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    padding: 10px;
+    background-color: #f9f9f9;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+li:nth-child(odd) {
+    background-color: #eee;
 }
 
 div.checked {
     text-decoration: line-through;
+    font-style: italic;
+    color: green;
+}
+
+/* align the checkbox a bit better with the text */
+input[type=checkbox] {
+    transform: scale(1.4) translate(-2px, -2px);
+}
+
+button {
+    transform: translate(0px, -3px);
 }

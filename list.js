@@ -3,7 +3,9 @@ let nodeList = document.getElementsByTagName("li");
 for (let i = 0; i < nodeList.length; i++) {
     // add check box
     let checkBox = document.createElement("input");
+    checkBox.style.cursor = "pointer";
     checkBox.setAttribute("type", "checkbox");
+    checkBox.addEventListener("change", playDingSound); // Add event listener to play sound
 
     // text content
     let text = document.createTextNode(nodeList[i].textContent);
@@ -12,6 +14,9 @@ for (let i = 0; i < nodeList.length; i++) {
     // add delete button X
     let closeButton = document.createElement("button");
     closeButton.textContent = "\u00D7";
+    closeButton.style.backgroundColor = "#FFADB0";
+    closeButton.style.marginLeft = "10px";
+    closeButton.style.cursor = "pointer";
     closeButton.onclick = function() {
         this.parentElement.parentElement.remove();
     };
@@ -32,7 +37,9 @@ function newListItem(listString) {
     
     // add check box
     let checkBox = document.createElement("input");
+    checkBox.style.cursor = "pointer";
     checkBox.setAttribute("type", "checkbox");
+    checkBox.addEventListener("change", playDingSound); // Add event listener to play sound
 
     // text content
     let text = document.createTextNode(listString);
@@ -40,6 +47,9 @@ function newListItem(listString) {
     // add delete button X
     let closeButton = document.createElement("button");
     closeButton.textContent = "\u00D7";
+    closeButton.style.backgroundColor = "#FFADB0";
+    closeButton.style.marginLeft = "10px";
+    closeButton.style.cursor = "pointer";
     closeButton.onclick = function() {
         this.parentElement.parentElement.remove();
     };
@@ -52,7 +62,6 @@ function newListItem(listString) {
 
     // add to whole list
     li.appendChild(listContainer);
-
 
     // if not null, add to ul
     if (listString !== '') {
@@ -68,7 +77,6 @@ function addListItem() {
     console.log('added to list - ' + inputValue);
 }
 
-
 // on change, checkbox add checked class
 const listCheck = document.querySelector("ul");
 listCheck.addEventListener("change", (event) => {
@@ -77,14 +85,11 @@ listCheck.addEventListener("change", (event) => {
 
     // reset list
     resetCheck();
-
 });
 
 // reset check
 function resetCheck(){
     let nodeCheck = document.querySelectorAll("li");
-    //let tempListItem = [];
-
     const tempListItem = new DocumentFragment();
 
     // counter
@@ -93,7 +98,6 @@ function resetCheck(){
     while(nodeCounter < (nodeCheck.length-1)) {
         // if checked
         if (nodeCheck[nodeCounter].firstChild.classList.contains("checked")){
-
             // add as fragment
             tempListItem.appendChild(nodeCheck[nodeCounter].firstChild);
 
@@ -106,5 +110,13 @@ function resetCheck(){
             document.getElementById("listItems").appendChild(li);
         }
         nodeCounter = nodeCounter + 1;
+    }
+}
+
+// function to play ding sound
+function playDingSound(event) {
+    if (event.target.checked) {
+        let audio = new Audio('ding.mp3'); // Path to your sound file
+        audio.play();
     }
 }
