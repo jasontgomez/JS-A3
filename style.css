@@ -1,11 +1,15 @@
+html {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    height: 0; 
+    margin: auto;
 }
 .container {
     background-color: #fff;
@@ -13,6 +17,8 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
+    margin: auto;
+    margin-top: 80px;
 }
 h2 {
     margin-top: 0;
@@ -36,8 +42,19 @@ span {
     line-height: 30px;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 30px;
     margin-left: 5px;
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.3);
+    transition: 0.15s;
+}
+
+span:hover {
+    background-color: #4a994a;
+}
+
+span:active {
+    transform: translate(0,2px);
+    box-shadow: none;
 }
 ul {
     list-style-type: none;
@@ -55,6 +72,22 @@ li {
 li:nth-child(odd) {
     background-color: #eee;
 }
+
 div.checked {
     text-decoration: line-through;
+    font-style: italic;
+    color: green;
+}
+
+input {
+    transform: scale(1);
+}
+
+/* align the checkbox a bit better with the text */
+input[type=checkbox] {
+    transform: scale(1.4) translate(-2px, -2px);
+}
+
+button {
+    transform: translate(0px, -3px);
 }
